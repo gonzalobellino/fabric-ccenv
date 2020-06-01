@@ -9,7 +9,7 @@ We can rebuild the base image provided by HLF with a custom one like this [docke
 
 ~~~ 
 
-docker build --build-arg HTTP_PROXY=http://10.30.28.25:80 --build-arg HTTPS_PROXY=http://10.30.28.25:80 -t gb/fabric-ccenv .
+docker build --build-arg HTTP_PROXY=http://PROXY_HOST:PROXY_PORT --build-arg HTTPS_PROXY=http://PROXY_HOST:PROXY_PORT -t gb/fabric-ccenv .
 
 ~~~
 
