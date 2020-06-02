@@ -1,4 +1,4 @@
-# fabric-ccenv
+# fabric-ccenv 1.x
 Custom Dockerfile of Hyperledger Fabric cc image base with PROXY settings
 
 ## The problem
@@ -28,9 +28,11 @@ Additionally for Node chaincode
 - CORE_CHAINCODE_NODE_RUNTIME=gb/fabric-ccenv:latest
 ~~~
 
+---
 
-Additionally for Java chaincode
+For Java chaincodes is not enough extending **fabric-ccenv** and is required extend this image **hyperledger/fabric-javaenv**. Additionally we need to overwrite the next environment properties
 
 ~~~
-- CORE_CHAINCODE_JAVA_RUNTIME=gb/fabric-ccenv:latest
+      - CORE_CHAINCODE_BUILDER=gb/javaenv:latest
+      - CORE_CHAINCODE_JAVA_RUNTIME=gb/javaenv:latest      
 ~~~
